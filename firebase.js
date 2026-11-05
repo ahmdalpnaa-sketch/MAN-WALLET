@@ -13,5 +13,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
+// تصدير الخدمات لكي تستخدمها صفحة تسجيل الدخول
 export const auth = getAuth(app);
 export const db = getFirestore(app);
