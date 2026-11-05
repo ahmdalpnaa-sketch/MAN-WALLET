@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBL0Sa0ceh73dC0mpVIrgHzPWfr3pE3ks8",
+  apiKey: "AIzaSyBl0Saoceh73dCOmpvIrgHzPWfr3pE3ks8",
   authDomain: "villagewallet.firebaseapp.com",
   projectId: "villagewallet",
   storageBucket: "villagewallet.firebasestorage.app",
