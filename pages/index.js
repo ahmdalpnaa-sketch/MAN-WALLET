@@ -1,19 +1,23 @@
 import { useState } from 'react';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useRouter } from 'next/router'; // استدعاء الراوتر للتوجيه
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter(); // تعريف الراوتر
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(''); // مسح أي خطأ سابق
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("تم تسجيل الدخول بنجاح! سيتم توجيهك للوحة التحكم.");
+      // التوجيه إلى لوحة التحكم مباشرة بعد نجاح الدخول
+      router.push('/dashboard'); 
     } catch (err) {
-      setError(err.message);
+      setError(err.message); 
     }
   };
 
