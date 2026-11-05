@@ -13,7 +13,7 @@ export default function Login() {
       await signInWithEmailAndPassword(auth, email, password);
       alert("تم تسجيل الدخول بنجاح! سيتم توجيهك للوحة التحكم.");
     } catch (err) {
-      setError("البريد الإلكتروني أو كلمة المرور غير صحيحة.");
+      setError(err.message);
     }
   };
 
